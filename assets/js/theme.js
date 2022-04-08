@@ -1,6 +1,6 @@
 "use strict";
 
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 
 /* @preserve
  * The MIT License (MIT)
@@ -3697,11 +3697,11 @@ var Navbar = function () {
         $navbar.attr('style', 'background-color: ' + newColor + '!important');
 
         if (calc > '0.4') {
-          $navbarText.css('color', $textColor);
-          $navbarTextLink.css('color', $textColor);
+          $navbarText.attr('style', 'color: ' + $textColor + "!important");
+          $navbarTextLink.attr('style', 'color: ' + $textColor + "!important");
         } else {
-          $navbarText.css('color', '');
-          $navbarTextLink.css('color', '');
+          $navbarText.attr('style', 'color: ' + '');
+          $navbarTextLink.attr('style', 'color: ' + '');
         }
 
         if (calc > '0.97') {
@@ -3711,8 +3711,8 @@ var Navbar = function () {
       }
     } else {
       $navbar.attr('style', 'background-color: ' + $origBgColor + '!important');
-      $navbarText.css('color', $textColor);
-      $navbarTextLink.css('color', $textColor);
+      $navbarText.attr('style', 'color: ' + $textColor + "!important");
+      $navbarTextLink.attr('style', 'color: ' + $textColor + "!important");
     }
   } // Events
 

@@ -73,11 +73,11 @@ var Navbar = (function() {
                 $navbar.attr('style', 'background-color: ' + newColor + '!important');
     
                 if(calc > '0.4') {
-                    $navbarText.css('color', $textColor);
-                    $navbarTextLink.css('color', $textColor);
+                    $navbarText.attr('style', 'color: ' + $textColor + "!important");
+                    $navbarTextLink.attr('style', 'color: ' + $textColor + "!important");
                 } else {
-                    $navbarText.css('color', '');
-                    $navbarTextLink.css('color', '');
+                    $navbarText.attr('style', 'color: ' + '');
+                    $navbarTextLink.attr('style', 'color: ' + '');
                 }
     
                 if (calc > '0.97') {
@@ -87,8 +87,8 @@ var Navbar = (function() {
             }   
         } else {
             $navbar.attr('style', 'background-color: ' + $origBgColor + '!important');
-            $navbarText.css('color', $textColor);
-            $navbarTextLink.css('color', $textColor);
+            $navbarText.attr('style', 'color: ' + $textColor + "!important");
+            $navbarTextLink.attr('style', 'color: ' + $textColor + "!important");
         }
     }
     

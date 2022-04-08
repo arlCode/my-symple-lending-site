@@ -21679,6 +21679,9 @@ div.code-toolbar > .toolbar .toolbar-item span:hover {
   background-color: #fff;
   padding: 15px;
 }
+.spyre-navbar .navbar-text, .spyre-navbar a.navbar-text {
+  color: #1f2749;
+}
 
 .custom-navbar-logo img {
   width: 100%;
