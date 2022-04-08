@@ -1,0 +1,28 @@
+.modal-dialog {
+   max-width: 1100px;
+}
+
+.spyre-navbar {
+   
+   .navbar-brand {
+      background-color: #fff;
+      padding: 15px;
+   }
+}
+
+.custom {
+
+   &-navbar {
+
+      .menu-toggle {
+
+      }
+
+
+      &-logo img {
+         width: 100%;
+         max-width: 153px;
+         min-width: 82px;
+      }
+   }
+}
