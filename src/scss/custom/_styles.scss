@@ -3,14 +3,15 @@
 }
 
 .spyre-navbar {
-   
+
    .navbar-brand {
       background-color: #fff;
       padding: 15px;
    }
 
-   .navbar-text, a.navbar-text {
-      color: #1f2749;
+   .navbar-text,
+   a.navbar-text {
+      color: $secondary;
    }
 }
 
@@ -18,11 +19,33 @@
 
    &-navbar {
 
+      .menu-toggle {
+         right: 3px;
+         left: unset;
+      }
 
       &-logo img {
          width: 100%;
          max-width: 153px;
          min-width: 82px;
+      }
+
+      @media only screen and (max-width: 1199px) {
+         .navbar-collapse {
+            background-color: $secondary;
+            position: absolute;
+            top: 50px;
+            right: 0;
+            width: 100%;
+            padding: 20px;
+         }
+      }
+   }
+
+   &-testimonials {
+
+      &.owl-carousel .owl-item img {
+         max-width: 108px;
       }
    }
 }

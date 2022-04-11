@@ -21679,13 +21679,31 @@ div.code-toolbar > .toolbar .toolbar-item span:hover {
   background-color: #fff;
   padding: 15px;
 }
-.spyre-navbar .navbar-text, .spyre-navbar a.navbar-text {
+.spyre-navbar .navbar-text,
+.spyre-navbar a.navbar-text {
   color: #1f2749;
 }
 
+.custom-navbar .menu-toggle {
+  right: 3px;
+  left: unset;
+}
 .custom-navbar-logo img {
   width: 100%;
   max-width: 153px;
   min-width: 82px;
+}
+@media only screen and (max-width: 1199px) {
+  .custom-navbar .navbar-collapse {
+    background-color: #1f2749;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 100%;
+    padding: 20px;
+  }
+}
+.custom-testimonials.owl-carousel .owl-item img {
+  max-width: 108px;
 }
 /*# sourceMappingURL=theme.css.map */
