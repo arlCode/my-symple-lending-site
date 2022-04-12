@@ -3638,6 +3638,12 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
     }]
   }, {}, [4])(4);
 }), "undefined" != typeof window && null !== window ? window.P = window.Promise : "undefined" != typeof self && null !== self && (self.P = self.Promise);
+"use strict";
+
+$(function () {
+  $('header').load('components/head.html');
+  $('footer-component').load('components/foot.html');
+});
 /*
 
 Theme: Spyre - Slick contemporary multipurpose theme
@@ -3673,60 +3679,7 @@ var Preloader = new Promise(function (resolve) {
       }
     });
   }
-}); // Navbar colors
-
-var Navbar = function () {
-  // Variables
-  var $navbar = $('.spyre-navbar'),
-      $transparent = $navbar.data('transparent'),
-      $textColor = $navbar.data('text-color'),
-      $origBgColor = $navbar.css('background-color'),
-      $navbarText = $navbar.find('.navbar-text'),
-      $navbarTextLink = $navbar.find('.navbar-text a:not(".btn")'),
-      $firstSection = $('main').find('section:first-child'); // Methods
-
-  function init() {
-    var scrollTop = $(window).scrollTop(),
-        $width = $(window).width(),
-        height = $firstSection.find('.bg-container').length ? $firstSection.outerHeight() : 800,
-        calc = (scrollTop / height * 1.5).toString();
-
-    if ($width >= 992) {
-      if ($origBgColor.indexOf('a') == -1) {
-        var newColor = $origBgColor.replace(')', ', ' + calc + ')').replace('rgb', 'rgba');
-        $navbar.attr('style', 'background-color: ' + newColor + '!important');
-
-        if (calc > '0.4') {
-          $navbarText.attr('style', 'color: ' + $textColor + "!important");
-          $navbarTextLink.attr('style', 'color: ' + $textColor + "!important");
-        } else {
-          $navbarText.attr('style', 'color: ' + '');
-          $navbarTextLink.attr('style', 'color: ' + '');
-        }
-
-        if (calc > '0.97') {
-          newColor = $origBgColor.replace(')', ', 0.97)').replace('rgb', 'rgba');
-          $navbar.attr('style', 'background-color: ' + newColor + '!important');
-        }
-      }
-    } else {
-      $navbar.attr('style', 'background-color: ' + $origBgColor + '!important');
-      $navbarText.attr('style', 'color: ' + $textColor + "!important");
-      $navbarTextLink.attr('style', 'color: ' + $textColor + "!important");
-    }
-  } // Events
-
-
-  if ($navbar.length && typeof $transparent != 'undefined') {
-    init();
-    $(window).on({
-      'scroll resize': function scrollResize() {
-        init();
-      }
-    });
-  }
-}(); // Spyre Menu
-
+}); // Spyre Menu
 
 var Menu = function () {
   // Variables

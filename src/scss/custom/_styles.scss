@@ -12,10 +12,34 @@
    .navbar-text,
    a.navbar-text {
       color: $secondary;
+
+      &:hover {
+         color: $secondary;
+      }
+   }
+
+   &.custom-header {
+      &--light-text {
+
+         .navbar-text,
+         a.navbar-text {
+            color: #fff;
+      
+            &:hover {
+               color: #fff;
+            }
+         }
+      }
    }
 }
 
 .custom {
+
+   &-header {
+      &--light-text {
+         color: #fff !important;
+      }
+   }
 
    &-navbar {
 

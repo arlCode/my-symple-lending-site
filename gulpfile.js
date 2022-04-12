@@ -30,7 +30,7 @@ var PATHS = {
     SRC: {
         BASE: './',
         SCSS: './src/scss',
-        HTML: './**/*.html',
+        HTML: ['./**/*.html', './**/**/*.html'],
         PAGES: './pages',
         JS: [
             './node_modules/bluebird/js/browser/bluebird.min.js',
@@ -132,8 +132,8 @@ gulp.task('minify:js', function() {
 
 // Copy HTML
 gulp.task('copy:html', function() {
-    return gulp.src(PATHS.SRC.PAGES + '/*')
-        .pipe(gulp.dest(PATHS.DIST.BASE + '/pages'));
+    return gulp.src([PATHS.SRC.PAGES + '/*', PATHS.SRC.PAGES + '/**/**'])
+        .pipe(gulp.dest(PATHS.DIST.BASE + '/'));
 });
 
 // Copy assets

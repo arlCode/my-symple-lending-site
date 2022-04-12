@@ -1,0 +1,123 @@
+<div class="container">
+    <div class="row flex-fill justify-content-start align-items-center">
+        <div class="col-3 col-lg-2">
+            <a class="navbar-brand custom-navbar-logo mr-sm-0" href="./index.html">
+                <img src="../assets/img/logo.png" class="d-none d-lg-block" alt="Spyre" />
+                <img src="../assets/img/logo.png" class="d-block d-lg-none" alt="Spyre" />
+            </a>
+        </div>
+
+        <div class="navbar-text col-5 col-lg-3 col-md-4">
+            Contact us: <a href="tel:+1-855-950-4189" class="navbar-text">+1-855-950-4189</a>
+        </div>
+
+        <nav class="navbar custom-navbar col-4 col-lg-7 navbar-expand-xl navbar-dark justify-content-end">
+
+            <!-- TODO: Add class open to the menu toggle to activate navigation -->
+            <a type="button" class="menu-toggle d-xl-none d-sm-block" data-toggle="collapse"
+                data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="cross">
+                    <span></span>
+                    <span></span>
+                </div>
+            </a>
+
+            <div class="collapse justify-content-end navbar-collapse ml-auto" id="navbarTogglerDemo02">
+                <ul class="navbar-nav mr-5 mr-lg-2">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="./index.html">Homepage</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Services
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="debt-consolidation.html">Debt Consolidation</a>
+                            <a class="dropdown-item" href="home-loans.html">Home Loans</a>
+                            <a class="dropdown-item" href="business-loans.html">Business Loans</a>
+                            <a class="dropdown-item" href="personal-loan.html">Personal Loans</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-smooth-scroll data-smooth-scroll-offset="150"
+                        href="./apply">Contact</a>
+                    </li>
+                </ul>
+                <div class="d-inline">
+                    <a href="./apply" class="btn btn-primary text-nowrap">Apply Now</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+
+
+<script>
+    // Navbar colors
+
+var Navbar = (function() {
+    // Variables
+    var $navbar = $('.spyre-navbar'),
+        $transparent = $navbar.data('transparent'),
+        $textColor = $navbar.data('text-color'),
+        $origBgColor = $navbar.css('background-color'),
+        $navbarText = $navbar.find('.navbar-text'),
+        $navbarTextLink = $navbar.find('.navbar-text a:not(".btn")'),
+        $firstSection = $('main').find('section:first-child');
+
+    
+    // Methods
+    function init() {
+        var scrollTop = $(window).scrollTop(),
+            $width = $(window).width(),
+            height = $firstSection.find('.bg-container').length ? $firstSection.outerHeight() : 800,
+            calc = ((scrollTop / height) * 1.5).toString();
+
+        if($width >= 992) {
+            if($origBgColor.indexOf('a') == -1){
+                var newColor = $origBgColor.replace(')', ', ' + calc + ')').replace('rgb', 'rgba');
+                $navbar.attr('style', 'background-color: ' + newColor + '!important');
+    
+                if(calc > '0.4') {
+                    $navbarText.attr('style', 'color: ' + $textColor + "!important");
+                    $navbarTextLink.attr('style', 'color: ' + $textColor + "!important");
+                } else {
+                    $navbarText.attr('style', 'color: ' + '');
+                    $navbarTextLink.attr('style', 'color: ' + '');
+                }
+    
+                if (calc > '0.97') {
+                    newColor = $origBgColor.replace(')', ', 0.97)').replace('rgb', 'rgba');
+                    $navbar.attr('style', 'background-color: ' + newColor + '!important');
+                }
+            }   
+        } else {
+            $navbar.attr('style', 'background-color: ' + $origBgColor + '!important');
+            $navbarText.attr('style', 'color: ' + $textColor + "!important");
+            $navbarTextLink.attr('style', 'color: ' + $textColor + "!important");
+        }
+    }
+    
+
+    // Events
+    if($navbar.length && typeof $transparent != 'undefined') {
+        init();
+
+        $(window).on({
+            'scroll resize': function() {
+                init();
+            }
+        });
+    }
+}());
+</script>

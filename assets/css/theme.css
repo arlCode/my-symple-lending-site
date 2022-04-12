@@ -21683,7 +21683,22 @@ div.code-toolbar > .toolbar .toolbar-item span:hover {
 .spyre-navbar a.navbar-text {
   color: #1f2749;
 }
+.spyre-navbar .navbar-text:hover,
+.spyre-navbar a.navbar-text:hover {
+  color: #1f2749;
+}
+.spyre-navbar.custom-header--light-text .navbar-text,
+.spyre-navbar.custom-header--light-text a.navbar-text {
+  color: #fff;
+}
+.spyre-navbar.custom-header--light-text .navbar-text:hover,
+.spyre-navbar.custom-header--light-text a.navbar-text:hover {
+  color: #fff;
+}
 
+.custom-header--light-text {
+  color: #fff !important;
+}
 .custom-navbar .menu-toggle {
   right: 3px;
   left: unset;
