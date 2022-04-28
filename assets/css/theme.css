@@ -21721,4 +21721,12 @@ div.code-toolbar > .toolbar .toolbar-item span:hover {
 .custom-testimonials.owl-carousel .owl-item img {
   max-width: 108px;
 }
+.custom-list li {
+  font-size: 24px;
+  margin-bottom: 15px;
+  list-style-position: inside;
+}
+.custom-calculator {
+  font-size: 24px;
+}
 /*# sourceMappingURL=theme.css.map */

@@ -3640,6 +3640,30 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
 }), "undefined" != typeof window && null !== window ? window.P = window.Promise : "undefined" != typeof self && null !== self && (self.P = self.Promise);
 "use strict";
 
+(function () {
+  getMonthlyPayments(parseInt($('.loan-range-calculation').val()));
+  $('.loan-range-calculation').on('input change', function (event) {
+    getMonthlyPayments(parseInt(event.target.value));
+  });
+})();
+
+function getMonthlyPayments(loanRangeCalculationValue) {
+  var aprRate = .0595,
+      monthsLoaned = 60;
+  var newLoanAmount = loanRangeCalculationValue * aprRate + loanRangeCalculationValue,
+      calculation = newLoanAmount / parseInt(monthsLoaned);
+  var calculationOutput = (calculation * 100 / 100).toFixed(2),
+      calculationOutputAsString = Number(calculationOutput);
+  $('.calculation').html("$".concat(calculationOutputAsString.toLocaleString("en")));
+}
+
+$.fn.digits = function () {
+  return this.each(function () {
+    $(this).text($(this).text().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"));
+  });
+};
+"use strict";
+
 $(function () {
   $('header').load('components/head.html');
   $('footer-component').load('components/foot.html');
