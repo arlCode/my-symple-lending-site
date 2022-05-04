@@ -1,8 +1,9 @@
 (() => {
-
+    $('#currentValue').html(`$${Number($('.loan-range-calculation').val()).toLocaleString("en")}`);
     getMonthlyPayments(parseInt($('.loan-range-calculation').val()));
 
     $('.loan-range-calculation').on('input change', function (event) {
+        $('#currentValue').html(`$${Number(event.target.value).toLocaleString("en")}`);
         getMonthlyPayments(parseInt(event.target.value));
     });
 })();
