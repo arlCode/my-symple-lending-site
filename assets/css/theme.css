@@ -21682,6 +21682,7 @@ div.code-toolbar > .toolbar .toolbar-item span:hover {
 .spyre-navbar .navbar-text,
 .spyre-navbar a.navbar-text {
   color: #1f2749;
+  font-size: 1.2rem;
 }
 .spyre-navbar .navbar-text:hover,
 .spyre-navbar a.navbar-text:hover {
