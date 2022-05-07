@@ -1,0 +1,117 @@
+<!-- Section -->
+<section id="calculator" class="overflow-hidden text-center">
+    <div class="bg-container overlay overlay-40 parallax" data-rellax-percentage="0.1"
+        style="filter: brightness(20%); background-image: url(../assets/img/backgrounds/bg-06.jpg)"></div>
+
+    <div class="container py-5 ">
+        <div class="row">
+            <div class="col-12 text-left p-4 custom-calculator text-light">
+                <h2>Get Your Loan Estimate</h2>
+                <p>Select your loan estimate below and click, "apply now" to get started.</p>
+                <div class="form-group mb-5">
+                    <label for="formControlRange">Select Your Loan Amount</label>
+                    <div class="row">
+                        <p class="col-12">Current Loan Amount: <span id="currentValue"></span></p>
+                        <p class="col-6">$5,000</p>
+                        <p class="col-6 text-right">$100,000</p>
+                    </div>
+                    <div class="range-container">
+                        <input class="loan-range-calculation" type="range" id="range" min="5000" max="100000"
+                            step="5000">
+                        <label for="range">5000</label>
+                    </div>
+                    <!-- <input min="5000" max="100000" step="5000" type="range"
+                        class="form-control-range loan-range-calculation mb-3" id="formControlRange"> -->
+                    <p class="small">*Estimated Payment</p>
+                    <p class="calculation">$00.00</p>
+                </div>
+                <div class="form-group">
+                    <a href="./apply" class="btn btn-primary btn-lg mb-2">Apply Now</a>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="row justify-content-start align-items-center text-light">
+                    <div class="col-12 text-left">
+                        <h2 class="font-weight-bolder h2 mb-4">New Savings Opportunity</h2>
+                        <img class="img-fluid" src="../assets/img/table-3.png">
+                        <p class="custom-agreement text-light">*Example for illustrative purposes only.
+                            Estimations
+                            used were determined
+                            through Bankrate.com's loan consolidation calculator with minimum credit
+                            card payments of 4% of existing outstanding balances and a loan with a
+                            60-month term and 5.95% APR.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End of Section -->
+
+
+<script>
+    (() => {
+        $('#currentValue').html(`$${Number($('.loan-range-calculation').val()).toLocaleString("en")}`);
+        getMonthlyPayments(parseInt($('.loan-range-calculation').val()));
+
+        $('.loan-range-calculation').on('input change', function (event) {
+            $('#currentValue').html(`$${Number(event.target.value).toLocaleString("en")}`);
+            getMonthlyPayments(parseInt(event.target.value));
+        });
+    })();
+
+
+    function getMonthlyPayments(loanRangeCalculationValue) {
+
+        const aprRate = .0595,
+            monthsLoaned = 60;
+
+        let newLoanAmount = (loanRangeCalculationValue * aprRate) + loanRangeCalculationValue,
+            calculation = newLoanAmount / parseInt(monthsLoaned);
+
+        let calculationOutput = ((calculation * 100) / 100).toFixed(2),
+            calculationOutputAsString = Number(calculationOutput);
+
+        $('.calculation').html(`$${calculationOutputAsString.toLocaleString("en")}`);
+    }
+
+
+    $.fn.digits = function () {
+        return this.each(function () {
+            $(this).text($(this).text().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"));
+        })
+    }
+</script>
+
+
+<script>
+    const $rangeSlider = $('.loan-range-calculation');
+
+    $rangeSlider.on('input', (e) => {
+        // Get the label (which is the nextElementSibling)
+        const label = e.target.nextElementSibling;
+        // Get value of the input
+        const value = +e.target.value;
+        // Get the width value of the input
+        const range_width = getComputedStyle(e.target).getPropertyValue('width');
+        // Get the width value of the label
+        const label_width = getComputedStyle(label).getPropertyValue('width');
+        // Remove 'px' and conver to number
+        const num_width = +range_width.substring(0, range_width.length - 2);
+        const num_label_width = +label_width.substring(0, label_width.length - 2);
+        // Get min and max values
+        const max = +e.target.max;
+        const min = +e.target.min;
+        // Calculate the left value
+        const left = value * (num_width / max) - num_label_width / 2 + scale(value, min, max, 100, -110);
+
+        label.style.left = `${left}px`;
+        label.innerHTML = value;
+    });
+
+    // From StackOverflow: https://stackoverflow.com/questions/10756313/javascript-jquery-map-a-range-of-numbers-to-another-range-of-numbers
+    const scale = (num, in_min, in_max, out_min, out_max) => {
+        return (num - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+    }
+</script>
