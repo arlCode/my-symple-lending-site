@@ -37,6 +37,10 @@
 
 .custom {
 
+   &-full-size--image {
+      max-height: 600px;
+   }
+
    &--services-row {
       height: 60vh;
    }

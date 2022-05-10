@@ -21698,6 +21698,9 @@ div.code-toolbar > .toolbar .toolbar-item span:hover {
   color: #fff;
 }
 
+.custom-full-size--image {
+  max-height: 600px;
+}
 .custom--services-row {
   height: 60vh;
 }
