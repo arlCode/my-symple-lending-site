@@ -21698,6 +21698,9 @@ div.code-toolbar > .toolbar .toolbar-item span:hover {
   color: #fff;
 }
 
+.custom--modal {
+  max-width: 500px;
+}
 .custom-full-size--image {
   max-height: 600px;
 }
@@ -21706,6 +21709,14 @@ div.code-toolbar > .toolbar .toolbar-item span:hover {
 }
 .custom-header--light-text {
   color: #fff !important;
+}
+@media only screen and (max-width: 992px) {
+  .custom--bg-change {
+    background-color: #1f2749 !important;
+  }
+}
+.custom-navbar .navbar-collapse {
+  width: auto !important;
 }
 .custom-navbar .menu-toggle {
   right: 3px;
@@ -21811,7 +21822,7 @@ div.code-toolbar > .toolbar .toolbar-item span:hover {
   padding: 5px 0;
   position: absolute;
   top: -35px;
-  left: 50%;
+  left: 49%;
   text-align: center;
   width: 100px;
   color: #343a40;

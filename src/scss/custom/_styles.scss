@@ -37,6 +37,10 @@
 
 .custom {
 
+   &--modal {
+      max-width: 500px;
+   }
+
    &-full-size--image {
       max-height: 600px;
    }
@@ -51,7 +55,18 @@
       }
    }
 
+   @media only screen and (max-width: 992px) {
+      &--bg-change {
+         background-color: $secondary !important;
+      }
+   }
+
    &-navbar {
+
+      .navbar-collapse {
+         width: auto !important;
+
+      }
 
       .menu-toggle {
          right: 3px;
@@ -148,7 +163,8 @@
             -webkit-appearance: none;
          }
 
-         &:active::-ms-fill-lower, &:active::-ms-fill-upper {
+         &:active::-ms-fill-lower,
+         &:active::-ms-fill-upper {
             background: $primary;
          }
 
@@ -181,7 +197,7 @@
             padding: 5px 0;
             position: absolute;
             top: -35px;
-            left: 50%;
+            left: 49%;
             text-align: center;
             width: 100px;
             color: $dark;
