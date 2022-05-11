@@ -6,61 +6,7 @@
         </div>
         <div class="owl-carousel custom-testimonials pb-6 px-lg-8 px-xl-12 owl-loaded owl-drag"
             data-carousel-options='{"autoplay":true,"margin":30,"nav":true,"items":1,"loop":true,"dots":false}'>
-
         </div>
     </div>
 </section>
 <!-- End of Section -->
-
-
-<script>
-    (function () {
-        var $testimonialsContainer = $('.custom-testimonials'),
-            row = document.createElement('div'),
-            columnWrapper = document.createElement('div'),
-            testimonialColumn = document.createElement('div'),
-            blockQuoteElement = document.createElement('blockquote'),
-            pTag = document.createElement('p'),
-            testimonialFooter = document.createElement('footer'),
-            testimonialAuthor = document.createElement('span'),
-            testimonialStarRating = document.createElement('img');
-
-            // Testimonial Footer
-            testimonialFooter.appendChild(testimonialAuthor);
-            testimonialFooter.appendChild(testimonialStarRating);
-
-            // Block Quote Section
-            blockQuoteElement.appendChild(pTag);
-            blockQuoteElement.appendChild(testimonialFooter);
-
-            // Testimonial Column
-            testimonialColumn.appendChild(blockQuoteElement);
-            testimonialColumn.appendChild(testimonialFooter);
-
-            // Build the Node Structure
-            columnWrapper.appendChild(testimonialColumn);
-            row.appendChild(columnWrapper);
-
-            // Final Node Nesting
-            $testimonialsContainer.append(row);
-
-        // <div class="row justify-content-center">
-        //         <div class="col-12">
-        //             <div class="col-lg-12">
-        //                 <blockquote class="blockquote">
-        //                     <p>Lissette is an excellent agent, very patient and really takes the time to explain
-        //                         step by step how this system actually works, very helpful ,trustworthy
-        //                         ,excellent customer service and devoted, providing her undivided attention
-        //                         towards customer's needs and questions, I would definitely recommend Symple
-        //                         Lending</p>
-        //                     <footer class="blockquote-footer text-right">
-        //                         <span class="h5 text-secondary fw-medium">Daniel Brito</span>
-        //                         <img src="../assets/img/stars-5.svg" alt="" width="108px" class="ml-auto" />
-        //                         US
-        //                     </footer>
-        //                 </blockquote>
-        //             </div>
-        //         </div>
-        //     </div>
-    })();
-</script>
