@@ -9,31 +9,10 @@ function createElement(elementType, dynamicText, ...classes) {
 }
 
 function generateTestimonials() {
-    // var row = document.createElement('div'),
-    //     columnWrapper = document.createElement('div'),
-    //     testimonialColumn = document.createElement('div'),
-    //     blockQuoteElement = document.createElement('blockquote'),
-    //     pTag = document.createElement('p'),
-    //     testimonialFooter = document.createElement('footer'),
-    //     testimonialAuthor = document.createElement('span'),
-    //     testimonialStarRating = document.createElement('img');
-
-    // row.classList.add('row', 'justify-content-center');
-    // columnWrapper.classList.add('col-12');
-    // testimonialColumn.classList.add('col-lg-12');
-    // blockQuoteElement.classList.add('blockquote');
-    // testimonialFooter.classList.add('blockquote-footer', 'text-right');
-    // testimonialAuthor.classList.add('h5', 'text-secondary', 'fw-medium');
-    // testimonialStarRating.classList.add('ml-auto');
 
 
 
     testimonialData.map(testimonial => {
-
-        console.log(testimonial.review_title);
-        console.log(testimonial.review_body);
-        console.log(testimonial.reviewer_name);
-        console.log(testimonial.reviewer_country);
 
         var row = createElement('div', '', ...["row", "justify-content-center"]),
             columnWrapper = createElement('div', '', 'col-12'),
