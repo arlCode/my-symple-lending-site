@@ -21703,6 +21703,7 @@ div.code-toolbar > .toolbar .toolbar-item span:hover {
 }
 .custom-full-size--image {
   max-height: 600px;
+  max-width: 700px;
 }
 .custom--services-row {
   height: 60vh;
